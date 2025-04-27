@@ -1,0 +1,88 @@
+<html lang="PT-BR">
+<head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="">
+    <script src="jquery.js"></script>
+    <script>
+        function adicionar(valor){
+            document.getElementById('visor').value += valor;
+        }
+
+        function limpar(){
+            document.getElementById('visor').value = "";
+        }
+
+        function calcular(){
+            var visor = document.getElementById('visor');
+            try {
+                visor.value = eval(visor.value);
+            } catch(error) {
+                visor.value = 'Erro';
+            }
+        }
+    </script>
+    <style>
+        .botao {
+            width: 4%;
+            height: 2%;
+            background-color: rgb(150, 120, 255);
+            color: white;
+        }
+        .botaoo {
+            width: 4%;
+            height: 2%;
+            background-color: rgb(120, 180, 255);
+            color: white;
+        }
+        .limpar {
+            width: 4%;
+            height: 2%;
+            background-color: rgb(255, 99, 99);
+            color: white;
+        }
+        .calcular {
+            width: 4%;
+            height: 2%;
+            background-color: rgb(90, 200, 90);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Calculadora</legend>
+        <input type="text" id="visor">
+        <br><br>
+        <button onclick="adicionar('1')" class="botao">1</button>
+        <button onclick="adicionar('2')" class="botao">2</button>
+        <button onclick="adicionar('3')" class="botao">3</button>
+        <button onclick="adicionar('+')" class="botaoo">+</button>
+        <button onclick="adicionar('%')" class="botaoo">%</button>
+
+        <br><br>
+        <button onclick="adicionar('4')" class="botao">4</button>
+        <button onclick="adicionar('5')" class="botao">5</button>
+        <button onclick="adicionar('6')" class="botao">6</button>
+        <button onclick="adicionar('-')" class="botaoo">-</button>
+        <button onclick="adicionar('^')" class="botaoo">^</button>
+
+        <br><br>
+        <button onclick="adicionar('7')" class="botao">7</button>
+        <button onclick="adicionar('8')" class="botao">8</button>
+        <button onclick="adicionar('9')" class="botao">9</button>
+        <button onclick="adicionar('/')" class="botaoo">/</button>
+        <button onclick="adicionar('(')" class="botaoo">(</button>
+
+        <br><br>
+        <button onclick="adicionar('.')" class="botaoo">.</button>
+        <button onclick="adicionar('0')" class="botao">0</button>
+        <button onclick="adicionar(',')" class="botaoo">,</button>
+        <button onclick="adicionar('*')" class="botaoo">x</button>
+        <button onclick="adicionar(')')" class="botaoo">)</button>
+
+        <br><br>
+        <button onclick="calcular()" class="calcular">=</button>
+        <button onclick="limpar()" class="limpar">C</button>
+    </fieldset>
+</body>
+</html>
